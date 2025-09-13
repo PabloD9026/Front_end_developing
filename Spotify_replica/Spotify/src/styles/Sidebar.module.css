@@ -1,0 +1,211 @@
+/* src/styles/Sidebar.module.css */
+.sidebar {
+  width: 250px; /* Fixed width for sidebar */
+  background-color: #000000; /* Black background */
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+}
+
+.logo {
+  margin-bottom: 20px;
+  padding-left: 12px;
+}
+
+.logo svg {
+  width: 130px; /* Adjust as needed */
+  height: auto;
+  fill: #1DB954; /* Spotify green */
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  margin-bottom: 8px;
+}
+
+.navigation a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: color 0.2s ease-in-out;
+}
+
+.navigation a:hover {
+  color: #ffffff;
+}
+
+.navigation a svg {
+  fill: currentColor; /* Use current text color for icon */
+  width: 24px;
+  height: 24px;
+}
+
+.librarySection {
+  background-color: #121212;
+  border-radius: 8px;
+  padding: 8px 0;
+  flex-grow: 1; /* Allow library section to grow */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.libraryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.libraryButton {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.libraryButton:hover {
+  color: #ffffff;
+}
+
+.libraryButton svg {
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+}
+
+.plusButton {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.plusButton:hover {
+  background-color: #282828;
+  color: #ffffff;
+}
+
+.plusButton svg {
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+}
+
+.card {
+  background-color: #242424;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card p {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin: 0;
+}
+
+.createPlaylistButton,
+.browsePodcastsButton {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 500px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: transform 0.2s ease-in-out;
+}
+
+.createPlaylistButton:hover,
+.browsePodcastsButton:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  margin-top: auto; /* Pushes footer to the bottom */
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.footer li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 11px;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer li a:hover {
+  color: #ffffff;
+}
+
+.languageButton {
+  background: none;
+  border: 1px solid #727272;
+  color: #ffffff;
+  border-radius: 500px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.languageButton:hover {
+  border-color: #ffffff;
+}
+
+.languageButton svg {
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
+}

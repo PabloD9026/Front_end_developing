@@ -1,0 +1,55 @@
+/* src/styles/MainContent.module.css */
+.mainContent {
+  flex-grow: 1;
+  padding: 32px;
+  background-color: #121212;
+  overflow-y: auto; /* Allow vertical scrolling within main content */
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.sectionHeader h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.showAll {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease-in-out;
+}
+
+.showAll:hover {
+  color: #ffffff;
+}
+
+.grid {
+  display: flex; /* Changed to flexbox */
+  flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 24px; /* Space between cards */
+  padding-bottom: 10px; /* Add some padding for scrollbar visibility */
+
+  /* Optional: Hide scrollbar for a cleaner look, but keep functionality */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

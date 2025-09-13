@@ -1,0 +1,17 @@
+/* src/styles/HomePage.module.css */
+.homePage {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #121212;
+  color: #ffffff;
+  position: relative; /* Needed for fixed player to position correctly relative to this */
+}
+
+.mainSection {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Allow scrolling for main content */
+  padding-bottom: 90px; /* Add space for the fixed player at the bottom */
+}

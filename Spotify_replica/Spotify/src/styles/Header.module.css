@@ -1,0 +1,134 @@
+/* src/styles/Header.module.css */
+.header {
+  background-color: #070707; /* Slightly darker than main content */
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.leftNav {
+  display: flex;
+  gap: 16px;
+}
+
+.navButton {
+  background-color: #0a0a0a;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #b3b3b3;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.navButton:hover {
+  background-color: #1a1a1a;
+}
+
+.navButton svg {
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
+}
+
+.searchBar {
+  flex-grow: 1;
+  max-width: 360px;
+  background-color: #242424;
+  border-radius: 500px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 24px; /* Space between nav buttons and search */
+}
+
+.searchBar svg {
+  fill: #b3b3b3;
+  width: 24px;
+  height: 24px;
+}
+
+.searchBar input {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+}
+
+.searchBar input::placeholder {
+  color: #b3b3b3;
+}
+
+.rightNav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navLink {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: color 0.2s ease-in-out;
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.separator {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+.installAppButton {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease-in-out;
+}
+
+.installAppButton:hover {
+  color: #ffffff;
+}
+
+.installAppButton svg {
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
+}
+
+.loginButton {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 500px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.loginButton:hover {
+  transform: scale(1.05);
+}

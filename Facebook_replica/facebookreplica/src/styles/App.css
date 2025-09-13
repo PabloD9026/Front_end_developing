@@ -1,0 +1,358 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5; /* Facebook background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  max-width: 980px; /* Max width for the content area */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.facebook-logo {
+  height: 106px; /* Adjust as needed */
+  margin: -28px;
+  align-self: left;
+}
+
+.content-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  width: 100%;
+  max-width: 980px;
+  gap: 30px; /* Space between the two main columns */
+  margin-bottom: 50px;
+}
+
+.recent-logins-section {
+  flex: 1;
+  padding-right: 20px; /* Space from the form */
+}
+
+.recent-logins-section h2 {
+  font-size: 35px;
+  color: #1c1e21;
+  margin-bottom: 5px;
+}
+
+.recent-logins-section p {
+  font-size: 15px;
+  color: #606770;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.login-cards-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Allow cards to wrap if screen is small */
+}
+
+/* --- UPDATED RECENT LOGIN CARD STYLES --- */
+.recent-login-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* Internal padding */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 180px; /* Total external width (content + padding) */
+  height: 200px; /* Total external height (content + padding) */
+  box-sizing: border-box; /* Crucial: Width/Height now include padding and border */
+  justify-content: space-between; /* Distribute content vertically */
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.recent-login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.recent-login-card .remove-account-icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-image: url('https://imgs.search.brave.com/k066JKU27O-2Hz3SYRHj-RzXK2v2SnHrmiRwoqY7KFk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMTMvUmVk/LVgtUE5HLVBob3Rv/cy5wbmc');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 28px;
+  filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%);
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.recent-login-card:hover .remove-account-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.recent-login-card .profile-pic {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 1px solid #dddfe2; /* This border is for the picture itself, not the card */
+}
+
+.recent-login-card .user-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1c1e21;
+}
+
+/* --- UPDATED ADD ACCOUNT CARD STYLES --- */
+.add-account-card {
+  background-color: #fff;
+  /* Removed border: 1px solid #dddfe2; to make it consistent with recent-login-card's visual edge */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1); /* Using shadow for consistent edge */
+  box-sizing: border-box; /* Crucial: Width/Height now include padding */
+  /* margin: 8px 0; REMOVED */
+  padding: 20px; /* Standardized to 20px */
+  width: 180px; /* Total external width */
+  height: 200px; /* Total external height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Vertically center content */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s ease;
+}
+
+.add-account-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.add-account-card .add-icon {
+  background-color: #f0f2f5;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.add-account-card .add-icon::before,
+.add-account-card .add-icon::after {
+  content: '';
+  position: absolute;
+  background-color: #1877f2;
+}
+
+.add-account-card .add-icon::before { /* Vertical bar */
+  width: 4px;
+  height: 30px;
+}
+
+.add-account-card .add-icon::after { /* Horizontal bar */
+  width: 30px;
+  height: 4px;
+}
+
+
+.add-account-card .add-account-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1877f2;
+}
+
+/* LoginForm styles */
+.login-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+  max-width: 400px; /* Max width for the login form card */
+}
+
+.login-form-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+  padding: 20px;
+  width: 100%; /* Take full width of its parent */
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.login-form-card input[type="text"],
+.login-form-card input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 15px;
+  border: 1px solid #dddfe2;
+  border-radius: 6px;
+  font-size: 17px;
+  box-sizing: border-box;
+}
+
+.login-form-card input[type="text"]:focus,
+.login-form-card input[type="password"]:focus {
+  outline: none;
+  border-color: #1877f2;
+  box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+.login-form-card .login-button {
+  background-color: #1877f2;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.2s;
+}
+
+.login-form-card .login-button:hover {
+  background-color: #166fe5;
+}
+
+.login-form-card .forgot-password-link {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #1877f2;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+.login-form-card .forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.login-form-card .divider {
+  border-bottom: 1px solid #dadde1;
+  margin: 20px 0;
+}
+
+.login-form-card .create-new-account-button {
+  background-color: #42b72a;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  width: auto; /* Adjust width based on content, or set a max-width */
+  display: block; /* Make it a block element for centering */
+  margin: 0 auto; /* Center the button */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-form-card .create-new-account-button:hover {
+  background-color: #36a420;
+}
+
+.create-page-link {
+  font-size: 14px;
+  text-align: center;
+  color: #1c1e21;
+}
+
+.create-page-link a {
+  color: #1c1e21;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.create-page-link a:hover {
+  text-decoration: underline;
+}
+
+/* Footer styles */
+.footer-links {
+  width: 100%;
+  max-width: 980px;
+  border-top: 1px solid #dddfe2;
+  padding-top: 20px;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #737373;
+}
+
+.language-selector span {
+  margin-right: 10px;
+  color: #737373;
+  cursor: pointer;
+}
+
+.language-selector span:first-child {
+  font-weight: 600;
+}
+
+.language-selector span:hover {
+  text-decoration: underline;
+}
+
+.meta-links {
+  margin-top: 10px;
+  /* You'll add more spans/links here */
+}
+
+.copyright {
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .recent-logins-section,
+  .login-form-section {
+    padding: 0;
+    width: 100%;
+    max-width: 400px; /* Constrain width on smaller screens */
+  }
+
+  .login-form-section {
+    margin-top: 30px;
+  }
+
+  .login-cards-container {
+    justify-content: center; /* Center cards on small screens */
+  }
+}

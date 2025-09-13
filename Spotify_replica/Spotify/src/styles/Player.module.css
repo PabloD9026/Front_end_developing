@@ -1,0 +1,188 @@
+/* src/styles/Player.module.css */
+.playerContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px; /* Standard player height */
+  background-color: #181818; /* Darker black background */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-sizing: border-box;
+  z-index: 1000; /* Ensure it's above other content */
+  border-top: 1px solid #000; /* Subtle top border */
+}
+
+.noSongPlaying {
+  width: 100%;
+  text-align: center;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+.songInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1; /* Allows it to take available space */
+  min-width: 0; /* Allows text to truncate */
+}
+
+.albumCover {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%; /* Circular album cover */
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.spinning {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.textInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Allows text to truncate */
+}
+
+.songTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artistName {
+  font-size: 12px;
+  color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 2; /* Takes more space for controls and timeline */
+  max-width: 720px; /* Limit width for better aesthetics */
+}
+
+.playbackButtons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.controlButton,
+.playPauseButton {
+  background: none;
+  border: none;
+  color: #ffffff; /* White buttons */
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease-in-out;
+}
+
+.controlButton:hover,
+.playPauseButton:hover {
+  transform: scale(1.1);
+}
+
+.playPauseButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+.controlButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.timeline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.time {
+  font-size: 11px;
+  color: #b3b3b3;
+  width: 30px; /* Fixed width for time display */
+  text-align: center;
+}
+
+.progressBar,
+.volumeBar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #404040; /* Dark grey track */
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  background-image: linear-gradient(#1DB954, #1DB954); /* Green progress */
+  background-repeat: no-repeat;
+}
+
+.progressBar::-webkit-slider-thumb,
+.volumeBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff; /* White thumb */
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  display: none; /* Hide thumb by default */
+}
+
+.progressBar:hover::-webkit-slider-thumb,
+.volumeBar:hover::-webkit-slider-thumb {
+  display: block; /* Show thumb on hover */
+}
+
+.progressBar::-moz-range-thumb,
+.volumeBar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: flex-end; /* Push to the right */
+  max-width: 180px; /* Limit volume control width */
+}
+
+.volumeBar {
+  width: 100px; /* Fixed width for volume bar */
+}

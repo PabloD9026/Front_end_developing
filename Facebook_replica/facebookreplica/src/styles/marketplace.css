@@ -1,0 +1,449 @@
+/* General layout for the marketplace page */
+.marketplace-layout {
+  background-color: #f0f2f5; /* Light grey background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stack top nav and main content */
+  width: 100vw; /* Ensure layout takes full width */
+}
+
+/* This is the container for the actual marketplace content below the nav bar */
+.marketplace-main-area {
+  padding: 20px;
+  max-width: 1200px; /* Limits the overall content width, as per Facebook's design */
+  margin: 0 auto; /* Centers the content */
+  width: 100vw;
+  flex-grow: 1; /* Allows it to take available space */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* --- Top Navigation Bar --- */
+.top-nav-bar {
+  display: flex;
+  justify-content: space-between; /* Pushes left, center, right sections apart */
+  align-items: center;
+  background-color: #242526; /* Dark Facebook top bar color */
+  padding: 16px 26px;
+  color: #e4e6eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100vw; /* Explicitly set to full viewport width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Prevents them from shrinking too much */
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* This is key: allows icons to spread out across available space */
+  justify-content: center; /* Centers icons when there's plenty of space */
+  gap: 10px; /* Add some default gap between icons */
+  max-width: 700px; /* Limit how wide icons can spread before some start disappearing */
+  margin: 0 10px; /* Small margin from left/right sections */
+}
+
+.nav-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-search-top { /* Renamed to avoid conflict, targets the search in the top nav */
+  flex-grow: 1; /* Allows search bar to fill available space in nav-left */
+  max-width: 250px; /* Standard Facebook top search bar width */
+  margin-left: 5px; /* Small space after logo */
+}
+
+.nav-search-top input {
+  background-color: #3a3b3c;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  color: #e4e6eb;
+  font-size: 15px;
+  width: 100%; /* Make search input full width of its parent (.nav-search-top) */
+  box-sizing: border-box;
+}
+
+.nav-icon {
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  position: relative;
+  flex-shrink: 0; /* Prevents individual icons from shrinking */
+}
+
+.nav-icon:hover {
+  background-color: #4e4f50;
+}
+
+.nav-icon.active {
+  color: #1877f2;
+  border-bottom: 3px solid #1877f2;
+  padding-bottom: 7px;
+}
+
+.nav-icon.highlight {
+  background-color: #3a3b3c;
+  border-radius: 8px;
+}
+
+.nav-profile-circle { /* This represents the circular user profile image */
+  width: 28px;
+  height: 28px;
+  background-color: #ccc; /* Placeholder for profile pic */
+  border-radius: 50%;
+  margin-left: 10px; /* Space from adjacent icon */
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 1px solid #e4e6eb; /* Light border for definition */
+}
+
+.badge {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  background-color: #fa3e3e;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  line-height: 1;
+  transform: translate(50%, -50%); /* Adjust position for better centering */
+}
+
+
+/* --- Marketplace Header --- */
+.marketplace-header {
+  background-color: #242526;
+  padding: 12px;
+  margin-bottom: 5px;
+  border-radius: 12px;
+  color: #e4e6eb;
+
+}
+
+.marketplace-header-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+  
+}
+
+.marketplace-user-profile {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.marketplace-buttons {
+  display: flex;
+  gap: 10px;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+}
+
+.marketplace-btn {
+  background-color: #3a3b3c;
+  color: #e4e6eb;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.2s;
+  flex-grow: 1; /* Allow buttons to grow to fill space */
+  min-width: 60px; /* Minimum width for buttons before wrapping */
+  white-space: nowrap; /* Prevent text wrapping inside button */
+}
+
+.marketplace-btn:hover {
+  background-color: #4e4f50;
+}
+
+.marketplace-btn.primary {
+  background-color: #1877f2;
+}
+
+.marketplace-btn.primary:hover {
+  background-color: #166fe5;
+}
+
+.marketplace-search-bar input {
+  width: 100%;
+  background-color: #3a3b3c;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  color: #e4e6eb;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* --- Marketplace Content (Grid) --- */
+.marketplace-content {
+  color: #1c1e21;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers children like title, location, and grid */
+  width: 100%; /* Ensure it takes full width of its parent */
+}
+
+.suggestions-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #050505;
+  width: 100%; /* Ensure title takes full width to align with items */
+  max-width: 1200px; /* Match max-width of main-area for alignment */
+  box-sizing: border-box;
+  padding: 0 20px; /* Match main-area padding for alignment */
+  text-align: left; /* Keep text left-aligned */
+}
+
+.location-info {
+  font-size: 14px;
+  color: #65676b;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%; /* Ensure it takes full width for alignment */
+  max-width: 1200px; /* Match max-width of main-area for alignment */
+  box-sizing: border-box;
+  padding: 0 20px; /* Match main-area padding for alignment */
+  text-align: left;
+}
+
+.marketplace-items-grid {
+  display: grid;
+  /* --- KEY CHANGES HERE for grid behavior --- */
+  /* This creates explicitly defined 220px columns and centers the whole grid */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Use 1fr to fill available space in each column track, this often works better with auto-fit */
+  gap: 15px; /* Space between cards */
+  justify-content: center; /* Centers the entire grid within its parent when items don't fill the row */
+  align-content: start; /* Align grid rows to the start */
+
+  width: 100%; /* Ensure the grid itself takes up 100% of its parent's width for calculation */
+  box-sizing: border-box;
+  /* Consider removing any max-width here if present, let marketplace-main-area control it */
+  max-width: calc(100% - 40px); /* Adjust to viewport or parent width minus padding for optimal fit */
+}
+
+.marketplace-item-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  /* --- CRITICAL: Fixed width for the CARD itself --- */
+  width: 220px; /* This ensures the card's width NEVER changes */
+  height: 350px; /* Allow height to adjust based on content */
+  box-sizing: border-box; /* Crucial for consistent sizing */
+  /* --- NEW: Center the fixed-width card within its potentially wider grid cell --- */
+  margin: 0 auto;
+}
+
+.marketplace-item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.marketplace-item-card .item-image {
+  width: 100%; /* Will now be 220px due to parent card's fixed width */
+  height: 220px; /* Fixed height for images, making them square */
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.marketplace-item-card .item-info {
+  padding: 10px;
+}
+
+.marketplace-item-card .item-status {
+  font-size: 13px;
+  color: #f02849;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.marketplace-item-card .item-price {
+  font-size: 17px;
+  font-weight: bold;
+  color: #050505;
+  margin-bottom: 5px;
+}
+
+.marketplace-item-card .item-title {
+  font-size: 15px;
+  color: #050505;
+  line-height: 1.3;
+  margin-bottom: 5px;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  overflow: hidden; 
+  -webkit-line-clamp: 1; 
+  line-clamp: 1; 
+  text-overflow: ellipsis; 
+}
+
+
+.marketplace-item-card .item-location {
+  font-size: 13px;
+  color: #65676b;
+}
+
+/* --- Responsive Adjustments (retained from previous, with more aggressive padding tweaks) --- */
+/* Default: Hide less important icons */
+.nav-icon-gaming,
+.nav-icon-events,
+.nav-icon-memories {
+  display: none;
+}
+
+/* Adjustments for smaller screens, hiding icons sequentially */
+@media (max-width: 1200px) {
+  .nav-center {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav-icon-groups {
+    display: none;
+  }
+  .nav-center {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 980px) {
+  .nav-icon-watch {
+    display: none;
+  }
+  .nav-center {
+    max-width: 500px;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 850px) {
+  .nav-icon-friends {
+    display: none;
+  }
+  .nav-center {
+    max-width: 400px;
+  }
+  .nav-search-top {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-nav-bar {
+    flex-wrap: wrap;
+    padding: 8px;
+    justify-content: center;
+  }
+
+  .nav-left {
+    width: 100%;
+    order: 2;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  .nav-logo {
+    display: none;
+  }
+  .nav-search-top {
+    flex-grow: 1;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .nav-search-top input {
+    text-align: center;
+  }
+
+  .nav-center {
+    width: 100%;
+    order: 1;
+    margin: 0;
+    gap: 0;
+    justify-content: space-around;
+  }
+  .nav-icon {
+    padding: 10px 8px;
+    flex-basis: auto;
+  }
+  .nav-icon-home, .nav-icon-marketplace {
+    flex-grow: 1;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+    order: 3;
+    margin-top: 10px;
+  }
+  .nav-icon-plus,
+  .nav-profile-circle,
+  .nav-icon-messages,
+  .nav-icon-notifications {
+    display: none;
+  }
+
+  /* Marketplace Specific Adjustments for smaller screens */
+  .marketplace-header {
+    padding: 15px;
+  }
+  .marketplace-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .marketplace-buttons {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .marketplace-btn {
+    flex-grow: 1;
+  }
+
+  /* --- MODIFIED: Aggressive padding reduction on main-area --- */
+  /* This is crucial to provide enough space for 2 cards to fit */
+  .marketplace-main-area {
+    padding: 10px; /* Reduced padding from 20px */
+  }
+
+  .suggestions-title,
+  .location-info {
+    padding: 0 10px; /* Match reduced main-area padding */
+  }
+}
+
+/* Ensure even more aggressive padding reduction for very narrow mobile views */
+@media (max-width: 470px) {
+  .marketplace-main-area {
+    padding: 5px; /* Minimal padding for the narrowest views */
+  }
+  .suggestions-title,
+  .location-info {
+    padding: 0 5px; /* Match minimal padding */
+  }
+}
